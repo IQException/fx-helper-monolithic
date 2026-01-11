@@ -32,6 +32,8 @@
 
 ## 项目演示
 
+https://github.com/user-attachments/assets/aa9367c8-7d66-4e2b-9841-1de5f2bd446e
+
 
 ## 设计思路
 
