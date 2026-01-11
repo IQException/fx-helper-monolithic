@@ -1,0 +1,57 @@
+package com.iqexception.fxhelper.message.wxmsg.model;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class BillMessage {
+
+    @JsonProperty("thing19")
+    private ValueObject shopName;
+    @JsonProperty("amount10")
+    private ValueObject amount;
+    @JsonProperty("time32")
+    private ValueObject createTime;
+    @JsonProperty("character_string29")
+    private ValueObject orderNo;
+    @JsonProperty("thing18")
+    private ValueObject billType;
+
+    public ValueObject getShopName() {
+        return shopName;
+    }
+
+    public void setShopName(ValueObject shopName) {
+        this.shopName = shopName;
+    }
+
+    public ValueObject getAmount() {
+        return amount;
+    }
+
+    public void setAmount(ValueObject amount) {
+        this.amount = amount;
+    }
+
+    public ValueObject getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(ValueObject createTime) {
+        this.createTime = createTime;
+    }
+
+    public ValueObject getOrderNo() {
+        return orderNo;
+    }
+
+    public void setOrderNo(ValueObject orderNo) {
+        this.orderNo = orderNo;
+    }
+
+    public ValueObject getBillType() {
+        return billType;
+    }
+
+    public void setBillType(ValueObject billType) {
+        this.billType = billType;
+    }
+}

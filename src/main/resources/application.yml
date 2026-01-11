@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: fx-helper
+  main:
+    allow-bean-definition-overriding: true
+
+  jackson:
+    default-property-inclusion: NON_NULL
+
+
+  sql:
+    init:
+      mode: always
+
+
+  profiles:
+       active: dev
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

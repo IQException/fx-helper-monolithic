@@ -1,0 +1,32 @@
+<configuration>
+    <shutdownHook/>
+    <property name="LOG_PATTERN" value="[%d{yyyy-MM-dd HH:mm:ss:SSS}] [%highlight(%p)] [%t] %replace([UID=%X{userId}] ){'\[UID=\] ',''}%replace([OID=%X{openId}] ){'\[OID=\] ',''}[%c] - %m%n%ex"/>
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                ${LOG_PATTERN}
+            </pattern>
+        </encoder>
+    </appender>
+
+    <shutdownHook/>
+    <appender name="LogFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/main.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/main-%d{yyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>
+                ${LOG_PATTERN}
+            </pattern>
+        </encoder>
+    </appender>
+    <appender name="AsyncLogFile" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="LogFile" />
+    </appender>
+    <root level="info">
+        <appender-ref ref="AsyncLogFile" />
+        <appender-ref ref="Console" />
+    </root>
+</configuration>

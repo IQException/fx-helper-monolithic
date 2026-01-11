@@ -1,0 +1,25 @@
+const PAGE_COUNT = 15;
+
+const ORDER_STATUS = {
+  CREATED: 0,
+  PROCESSING: 1,
+  SUCCEED: 2,
+  FAILED: 9
+};
+
+const EVENT_SHOP_BOARD_CLICK = "shop_board_click";
+
+const HEADER_PAY_SECRET = "FX-PAY-SECRET";
+
+const BILL_MESSAGE_ID = "tXNxjN_zMuK-ud_Ai7mhp6Jy7YDbS6XRd6I6I0wpoPg";
+
+const RECEIPT_MESSAGE_ID = "cz-dFqQOL9GgaNA0xc44aD0Y57m6QlsilCXykHrPeSk";
+
+export default {
+  PAGE_COUNT,
+  ORDER_STATUS,
+  EVENT_SHOP_BOARD_CLICK,
+  HEADER_PAY_SECRET,
+  BILL_MESSAGE_ID,
+  RECEIPT_MESSAGE_ID
+};

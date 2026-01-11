@@ -1,0 +1,45 @@
+@import '@nutui/nutui-taro/dist/styles/variables-jdb.scss';
+
+.board {
+  &-frame {
+    margin: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex: auto;
+    border-radius: 6px;
+    border: 1px solid #f5f6f7;
+    box-shadow: 0px 1px 7px 0px rgba(237, 238, 241, 1);
+  }
+
+  &-image {
+    margin: 8px 6px;
+    height: 80px;
+    width: 80px;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  &-right {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex: auto;
+
+    &-title {
+      color: $title-color;
+      font-size: $tdd-font-size-4;
+      font-weight: bold;
+    }
+
+    &-intro {
+      font-size: $tdd-font-size-6;
+      max-height: 60px;
+      overflow: scroll;
+      color: $text-color;
+      word-break: break-all;
+    }
+  }
+}
