@@ -89,10 +89,11 @@ https://github.com/user-attachments/assets/aa9367c8-7d66-4e2b-9841-1de5f2bd446e
 
 ### 一些实现细节
 
-- less is more
+- API风格
+  - less is more
   - https://coolshell.cn/articles/22173.html
   - https://v2ex.com/t/830030
-  - 放弃`REST` API ，原因与`DDD`一样，存在太多争议，定义模糊，实践困难，比如登录接口应该算是什么动词。
+  - 放弃`RESTFUL` API ，原因与`DDD`一样，存在太多争议，定义模糊，实践困难，比如登录接口应该算是什么动词。
     除静态资源外全部使用`@PostMapping`，`@RequestBody` & `@ResponseBody` 。增删改查、业务功能用Api名称与文档去定义，而不是用`Http Method`的语义去定义。
 
 - 参数传递
@@ -103,11 +104,15 @@ https://github.com/user-attachments/assets/aa9367c8-7d66-4e2b-9841-1de5f2bd446e
     之所以这样做是一：因为`HttpHeader`属于共享属性，不同的业务可能会有`Header`之间的冲突；二，`HttpHeader`是KV结构，不够结构化，使用起来不方便。
 
 - 入参校验 : `bean validation` 2.0
-- 统一异常处理 : `@ExceptionHandler` & `ErrorCode`
-- i18n : `MessageSource` & `LocaleResolver`
-- LoginFilter
-  - 简单起见，本项目不涉及复杂权限，只有两种用户，每种用户一种权限，所以省略权限管理。
-  - 从`HttpSession`获取用户信息，将用户信息放到`ThreadLocal`里，请求完成（`filter.doFilter`)后，remove。
 
-- 简单起见，每个`user`只能有一个`account`；将支付密码管理放在用户模块（在店铺创建时设置，普通用户只接受转入，不需要密码；密码sha256 不加盐）
+- 统一异常处理 : `@ExceptionHandler` & `ErrorCode`
+
+- i18n : `MessageSource` & `LocaleResolver`
+
+- 会话
+  - 从`HttpSession`获取用户信息，将用户信息放到`ThreadLocal`里，请求完成（`filter.doFilter`)后，remove。
+  
+- 权限
+  - 简单起见，本项目不涉及复杂权限，只有两种用户，每种用户一种权限，所以省略权限管理。
+  
 
